@@ -1,0 +1,385 @@
+:root {
+  --primary: #00c2bd;
+  --secondary: #000;
+  --lightGrey: whitesmoke;
+  --midGrey: #cacaca;
+  --darkGrey: #272727;
+  --danger: #ff3d3d;
+  --font-primary: "Open Sans", sans-serif;
+  --font-system: system-ui; /* postcssPresetEnv */
+  --borderRadius: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 3px var(--grey);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+}
+
+::selection {
+  background: rgba(0, 194, 189, 0.6);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  min-height: 100%;
+  background: var(--lightGrey);
+}
+
+body {
+  font-family: var(--font-system);
+  min-height: 100%;
+  position: relative;
+  background: white;
+  color: var(--secondary);
+  font-size: 1.6em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  background: var(--lightGrey);
+  line-height: 1.45;
+  font-size: 85%;
+  border-radius: 3px;
+  padding: 16px;
+}
+
+code {
+  font-size: 85%;
+  padding: 0.15em 0;
+  background: var(--lightGrey);
+  border-radius: 3px;
+}
+code:before,
+code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+pre code {
+  font-size: inherit;
+}
+pre code:before,
+pre code:after {
+  display: none;
+}
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  line-height: 1.1;
+  font-size: 1em;
+  font-style: italic;
+  border-left: 2px solid var(--primary);
+}
+
+/* Utility Classes */
+.light {
+  background-color: var(--lightGrey);
+}
+.white {
+  background-color: white;
+}
+.dark {
+  background-color: var(--primary);
+  color: white;
+}
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: white;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.taCenter {
+  text-align: center;
+}
+.taLeft {
+  text-align: left;
+}
+.taRight {
+  text-align: right;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Layout */
+
+.section {
+  width: 100%;
+  padding: 5rem 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.section:last-child {
+  border: 0;
+}
+.section.thick {
+  padding: 10rem 0;
+}
+.section.thin {
+  padding: 3.5rem 0;
+}
+.section.noPadding {
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .section {
+    width: 100%;
+    padding: 5rem 0;
+  }
+  .section.thick {
+    padding: 7rem 0;
+  }
+  .section.thin {
+    padding: 1.5rem 0;
+  }
+  .section--width--50 {
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 1111px;
+  width: 90%;
+  margin: 0 auto;
+}
+.container.skinny {
+  max-width: 888px;
+}
+.container.skinnier {
+  max-width: 555px;
+}
+
+/* Buttons */
+
+.Button {
+  background: var(--primary);
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1.4rem;
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+}
+.Button:hover,
+.Button:focus {
+  opacity: 0.95;
+  outline: none;
+}
+.Button[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: progress;
+}
+.Button-blank {
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Marginauto {
+  margin: auto;
+}
+
+.Form--Card {
+  text-decoration: none;
+  background: white;
+  color: inherit;
+  border: 1px solid var(--lightGrey);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease-in-out;
+  overflow: hidden;
+  padding: 60px;
+}
+
+.Form--Card:hover,
+.Form--Card:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Margin--top--20 {
+  margin-top: 20px;
+}
+
+.Padding--bottom--15 {
+  padding-bottom: 15px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .home--iframe {
+    width: 100%;
+  }
+  .Padding--homesection {
+    padding-left: 15px;
+  }
+  .Profile--Container {
+    width: 100% !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .home--iframe {
+    width: 100%;
+  }
+  .Padding--homesection {
+    padding-left: 15px;
+  }
+  .Profile--Container {
+    width: 100% !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .home--iframe {
+    width: 400px;
+  }
+  .container--flex {
+    display: flex;
+  }
+  .Padding--homesection {
+    padding-left: 100px;
+  }
+  .Profile--Container {
+    width: 100% !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .home--iframe {
+    width: 400px;
+  }
+  .container--flex {
+    display: flex;
+  }
+  .Padding--homesection {
+    padding-left: 100px;
+  }
+  .Profile--Container {
+    width: 55% !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .home--iframe {
+    width: 400px;
+  }
+  .float--right {
+    float: right;
+  }
+  .container--flex {
+    display: flex;
+  }
+  .Padding--homesection {
+    padding-left: 100px;
+  }
+  .Profile--Container {
+    width: 55% !important;
+  }
+}
+
+.limheight {
+  display: flex;
+  margin: auto;
+}
+
+.limheight li {
+  display: inline-block; /*necessary*/
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.flex-item {
+  flex: 25%;
+  background-color: #eeebeb;
+  /* background-color: whitesmoke; */
+}
+
+.flex-item-active {
+  background-color: white !important;
+}
+
+.flex-item:hover {
+  flex: 25%;
+  background-color: white;
+}
+
+.Profile--Info {
+  padding: 30px;
+  text-align: left;
+}
+.Course--Button {
+  border: 0px;
+  background-color: inherit;
+  cursor: pointer;
+}
